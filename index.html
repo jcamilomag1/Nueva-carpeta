@@ -35,6 +35,40 @@
             text-align: center;
             padding: 10px 0;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +79,7 @@
 </header>
 
 <div class="container">
+
     <div class="section">
         <h2>Descripción del Proyecto</h2>
         <p>Este proyecto consiste en una aplicación para la gestión de inventarios en obras de construcción, con el objetivo de optimizar el uso del cemento y otros materiales, reducir el desperdicio, y mejorar la planificación de las obras.</p>
@@ -58,7 +93,62 @@
             <li>Notificaciones de stock bajo</li>
             <li>Reportes semanales y mensuales de uso de materiales</li>
             <li>Historial de devoluciones y uso por trabajador</li>
+            <li>Gestión de proveedores y órdenes de compra</li>
+            <li>Estimación de materiales necesarios para nuevos proyectos</li>
         </ul>
+    </div>
+
+    <div class="section">
+        <h2>Gestión de Inventarios</h2>
+        <h3>Inventario Actual</h3>
+        <table>
+            <tr>
+                <th>Material</th>
+                <th>Cantidad Disponible</th>
+                <th>Unidad</th>
+            </tr>
+            <tr>
+                <td>Cemento</td>
+                <td>500</td>
+                <td>Sacos</td>
+            </tr>
+            <tr>
+                <td>Grava</td>
+                <td>200</td>
+                <td>Toneladas</td>
+            </tr>
+            <tr>
+                <td>Arena</td>
+                <td>300</td>
+                <td>Metros cúbicos</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Agregar Nuevo Material</h2>
+        <form action="#" method="POST">
+            <label for="material">Nombre del Material:</label>
+            <input type="text" id="material" name="material" required>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+
+            <label for="unidad">Unidad:</label>
+            <select id="unidad" name="unidad">
+                <option value="sacos">Sacos</option>
+                <option value="toneladas">Toneladas</option>
+                <option value="metros">Metros cúbicos</option>
+            </select>
+
+            <input type="submit" value="Agregar Material">
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Reportes</h2>
+        <button onclick="alert('Generando reporte semanal...')">Generar Reporte Semanal</button>
+        <button onclick="alert('Generando reporte mensual...')">Generar Reporte Mensual</button>
     </div>
 
     <div class="section">
@@ -69,6 +159,7 @@
             <li><strong>Supervisor:</strong> Monitoreo del uso de materiales, asignación a los trabajadores, y notificaciones.</li>
         </ul>
     </div>
+
 </div>
 
 <footer>
